@@ -5,7 +5,7 @@ import LoginSignUp from "../component/LoginSignUp";
 import ErrorPage from "../pages/ErrorPage";
 import User from "../component/User";
 import { AuthUserProvider } from "../utils/AuthUser";
-import { UserProvider } from "../utils/UserContext";
+import TransactionDetails from "../component/TransactionDetails";
 
 const PageRouter = () => {
   const route = createBrowserRouter([
@@ -17,6 +17,11 @@ const PageRouter = () => {
     {
       path: `${routes.USER}`,
       element: <User />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: `${routes.TRANSACTION}`,
+      element: <TransactionDetails />,
       errorElement: <ErrorPage />,
     },
   ]);

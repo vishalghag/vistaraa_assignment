@@ -1,4 +1,5 @@
 {
   "HOME": "/",
-  "USER": "/user"
+  "USER": "/user",
+  "TRANSACTION": "/transaction"
 }

@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { Form } from "react-router-dom";
 import InputBoxWithLabel from "../common/InputBoxWithLabel";
 import CommonButton from "../common/CommonButton";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
   createUserWithEmailAndPassword,
@@ -10,22 +9,20 @@ import {
 } from "firebase/auth";
 import { database } from "../Firebase/FirebaseConfig.js";
 import { useNavigate } from "react-router-dom";
-import UserContext from "../utils/UserContext.jsx";
 import AuthUser from "../utils/AuthUser.jsx";
+import { toast } from "react-toastify";
 const LoginSignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [login, setLogin] = useState(false);
-
-  const { user } = useContext(UserContext);
   const { auth } = useContext(AuthUser);
 
   const history = useNavigate();
 
   const emailNameHandler = (email) => {
-    user.name = email;
+    localStorage.setItem("userName", JSON.stringify(email));
   };
 
   const byPassToUser = () => {
@@ -133,7 +130,6 @@ const LoginSignUp = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };
