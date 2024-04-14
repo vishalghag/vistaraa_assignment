@@ -1,7 +1,11 @@
 # My Opinon
 
+0:Please check Common Folder
+
 1:Great project to learn with, and I have given my best.
+
 2: I used localStorage, toast, and also implemented basic authentication. Additionally, I demonstrated my knowledge of user context
+
 3:Here's a MongoDB query to list account IDs with transactions below 5000:
 db.transactions.aggregate([
 {
@@ -15,6 +19,7 @@ _id: "$accountId"
 }
 }
 ])
+
 4:And here's a query to list distinct products available in the system:
 db.transactions.distinct("product")
 
